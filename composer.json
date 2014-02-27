@@ -19,9 +19,6 @@
     "autoload": {
         "psr-0": {
             "ZendSentry": "src/"
-        },
-        "classmap": [
-            "./Module.php"
-        ]
+        }
     }
 }
