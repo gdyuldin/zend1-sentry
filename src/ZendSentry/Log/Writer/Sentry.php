@@ -24,6 +24,7 @@ class Sentry extends \Zend_Log_Writer_Abstract {
 
     protected $raven;
     protected $config;
+    protected $withTrace = false;
 
     /**
      * @param Raven $raven
@@ -33,6 +34,12 @@ class Sentry extends \Zend_Log_Writer_Abstract {
     {
         $this->raven = $raven;
         $this->config = $config;
+        if ($config instanceof Zend_Config) {
+            $config = $config->toArray();
+        }
+        if (is_array($config) && isset($config['withTrace'])) {
+            $this->withTrace = $config['withTrace'];
+        }
     }
 
     /**
@@ -43,7 +50,7 @@ class Sentry extends \Zend_Log_Writer_Abstract {
      */
     protected function _write($event)
     {
-        $this->raven->captureMessage($event['message'], array(), $this->logLevels[$event['priorityName']], false, $event['timestamp']);
+        $this->raven->captureMessage($event['message'], array(), $this->logLevels[$event['priorityName']], $this->withTrace, $event['timestamp']);
     }
 
     /**
