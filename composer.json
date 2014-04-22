@@ -1,17 +1,15 @@
 {
-    "name": "markushausammann/zend1-sentry",
+    "name": "1tush/zend1-sentry",
     "description": "A Zend Framework 1 module that lets you log to the Sentry service.",
     "keywords": ["log", "logging", "sentry", "raven", "zend-framework"],
     "homepage": "https://github.com/markushausammann/zend1-sentry",
     "type": "library",
     "version": "0.1.0",
     "license": "New BSD License",
-    "authors": [
-        {
-            "name": "Markus Hausammann",
-            "email": "markus.hausammann@cloud-solutions.net"
-        }
-    ],
+    "authors": [{
+        "name": "Markus Hausammann",
+        "email": "markus.hausammann@cloud-solutions.net"
+    }],
     "require": {
         "php": ">=5.3.0",
         "raven/raven": "0.8.0"
