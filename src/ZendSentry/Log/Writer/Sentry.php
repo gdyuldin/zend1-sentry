@@ -38,7 +38,7 @@ class Sentry extends \Zend_Log_Writer_Abstract {
             $config = $config->toArray();
         }
         if (is_array($config) && isset($config['withTrace'])) {
-            $this->withTrace = $config['withTrace'];
+            $this->withTrace = (bool) $config['withTrace'];
         }
     }
 
